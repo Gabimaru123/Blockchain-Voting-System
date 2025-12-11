@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './contexts/AuthContext';
 import { Web3Provider } from './contexts/Web3Context';
+import { SocketProvider } from './contexts/SocketContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ProtectedRoute from './components/auth/ProtectedRoute';
@@ -33,10 +34,11 @@ import Compliance from './pages/legal/Compliance';
 function App() {
   return (
     <Router>
-      <AuthProvider>
-        <Web3Provider>
-          <div className="min-h-screen bg-gray-50 flex flex-col">
-            <Navbar />
+        <AuthProvider>
+          <SocketProvider>
+            <Web3Provider>
+              <div className="min-h-screen bg-gray-50 flex flex-col transition-colors duration-200">
+                <Navbar />
             
             <main className="flex-1">
               <Routes>
@@ -121,9 +123,10 @@ function App() {
                 },
               }}
             />
-          </div>
-        </Web3Provider>
-      </AuthProvider>
+              </div>
+            </Web3Provider>
+          </SocketProvider>
+        </AuthProvider>
     </Router>
   );
 }
