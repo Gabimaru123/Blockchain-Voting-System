@@ -97,7 +97,55 @@ A **secure, transparent, and decentralized** voting system built with blockchain
 
 ### Prerequisites
 - **Node.js** v16+ ([Download](https://nodejs.org/))
-- **MongoDB** v5.0+ ([Download](https://www.mongodb.com/try/download/community))
+- **MongoDB** v5.0+ ([Download](https://www.mongodb.com/try/download/community)) OR [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (free cloud option)
+- **MetaMask** Browser Extension ([Install](https://metamask.io/))
+
+### Automated Setup (Recommended ⚡)
+
+**Option 1: One-Command Setup**
+```powershell
+# Clone the repository
+git clone https://github.com/prince-gladwin-in/Blockchain-Voting-System.git
+cd Blockchain-Voting-System
+
+# Run automated setup
+.\setup.ps1
+```
+
+This will:
+- ✅ Check prerequisites (Node.js, npm)
+- ✅ Install all dependencies (root, contracts, backend, frontend)
+- ✅ Create environment files from templates
+- ✅ Compile smart contracts
+- ✅ Provide next steps
+
+**Option 2: Quick Dependency Install**
+```powershell
+# Install dependencies only
+.\install-dependencies.ps1
+```
+
+**Option 3: Start the System**
+```powershell
+# Start all services (blockchain, backend, frontend)
+.\start-local.ps1
+```
+
+This will open 4 terminal windows:
+- 🔗 Hardhat Network (port 8545)
+- 📝 Contract Deployment
+- 🖥️ Backend Server (port 5000)
+- ⚛️ Frontend App (port 3000)
+
+**Verify Setup**
+```powershell
+# Check if everything is configured correctly
+.\test-setup.ps1
+```
+
+---
+
+### Manual Setup (Advanced)
 - **MetaMask** Browser Extension ([Install](https://metamask.io/))
 
 ### Installation
